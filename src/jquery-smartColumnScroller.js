@@ -83,6 +83,9 @@
 								// update phase
 								$this.data('phase', '3');
 
+								// trigger window
+								$(window).trigger('phase-3');
+
 								// set to 'static'
 								$this.css({'position':'static', 'margin-top':jQueryColumnParentHeight - jQueryColumnHeight});
 							}
@@ -104,6 +107,9 @@
 								// update phase
 								$this.data('phase', '2');
 
+								// trigger window
+								$(window).trigger('phase-2');
+
 								// calculate correct 'top' position of column
 								var topPos = browserWindowHeight - jQueryColumnHeight;
 								// calculate correct 'left' position of column
@@ -121,6 +127,9 @@
 							{
 								// update phase
 								$this.data('phase', '1');
+
+								// trigger window
+								$(window).trigger('phase-1')
 
 								// set to 'static' and reset 'margin-top'
 								$this.css({'position':'static', 'margin-top':0});
