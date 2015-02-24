@@ -78,8 +78,11 @@
 						if (( jQueryColumnParentHeight + jQueryColumnOriginalTop - browserWindowHeight - browserScrollTop) <= 0)
 						{
 							// if we already are in 'static mode', dont do anything
-							if ($this.css('position') != 'static') // TODO: change to .data('phase','3')
+							if ($this.data('phase') != '3')
 							{
+								// update phase
+								$this.data('phase', '3');
+
 								// set to 'static'
 								$this.css({'position':'static', 'margin-top':jQueryColumnParentHeight - jQueryColumnHeight});
 							}
@@ -96,8 +99,11 @@
 						if ((jQueryColumnHeight + jQueryColumnOriginalTop - browserWindowHeight - browserScrollTop) <= 0)
 						{ 
 							// if we already are in 'fixed mode', dont do anything
-							if ($this.css('position') != 'fixed') // TODO: change to .data('phase','2')
+							if ($this.data('phase') != '2')
 							{
+								// update phase
+								$this.data('phase', '2');
+
 								// calculate correct 'top' position of column
 								var topPos = browserWindowHeight - jQueryColumnHeight;
 								// calculate correct 'left' position of column
@@ -111,8 +117,11 @@
 							// switch column to 'static' and reset 'margin-top'
 
 							// if we already are in 'static mode', dont do anything
-							if ($this.css('position') != 'static') // TODO: change to .data('phase','1')
+							if ($this.data('phase') != '1')
 							{
+								// update phase
+								$this.data('phase', '1');
+
 								// set to 'static' and reset 'margin-top'
 								$this.css({'position':'static', 'margin-top':0});
 							}
