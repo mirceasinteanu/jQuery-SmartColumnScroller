@@ -38,7 +38,7 @@
 				$this.data('scs-top', $this.offset().top );
 				
 				// remembering original 'left' of column
-				$this.data('scs-left',  parseInt($this.offset().left, 10) - parseInt($this.css('margin-left'), 10));
+				$this.data('scs-left',  parseFloat($this.offset().left, 10) - parseFloat($this.css('margin-left'), 10));
 				
 				// remembering height of parent (scrolling will occur in this space)
 				$this.data('scs-parent-height', $this.parent().height() );
@@ -55,7 +55,7 @@
 						var jQueryColumnHeight = $this.height();
 						
 						// get height of parent
-						var jQueryColumnParentHeight = parseInt($this.data('scs-parent-height'), 10);
+						var jQueryColumnParentHeight = parseFloat($this.data('scs-parent-height'), 10);
 
 						// if height of column is higher or equal than parent, there is nothing to scroll...
 						if ( jQueryColumnHeight >= jQueryColumnParentHeight )
@@ -67,7 +67,7 @@
 						// prepare some more local variables, so that we dont compute them unnecessarily more than once:
 						
 						// get original 'top' position of column
-						var jQueryColumnOriginalTop = parseInt($this.data('scs-top'), 10);
+						var jQueryColumnOriginalTop = parseFloat($this.data('scs-top'), 10);
 						// calculate height of browsers viewport (Will compute it after every scroll event because user may have changed it)
 						var browserWindowHeight = $(window).height();
 						// get scrollTop position
@@ -91,7 +91,7 @@
 							}
 							
 							// remembering original 'left' of column
-							$this.data('scs-left',  parseInt($this.offset().left, 10) - parseInt($this.css('margin-left'), 10));
+							$this.data('scs-left',  parseFloat($this.offset().left, 10) - parseFloat($this.css('margin-left'), 10));
 							
 							// and exit
 							return;
@@ -136,7 +136,7 @@
 							}
 							
 							// remembering original 'left' of column
-							$this.data('scs-left',  parseInt($this.offset().left, 10) - parseInt($this.css('margin-left'), 10));
+							$this.data('scs-left',  parseFloat($this.offset().left, 10) - parseFloat($this.css('margin-left'), 10));
 						}
 						
 					}
